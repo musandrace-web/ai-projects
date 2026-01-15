@@ -34,7 +34,7 @@ from email_classifier import SpamClassifier
 model = SpamClassifier()
 prediction = model.predict("sample_email.txt")
 print(prediction)
-
+```
 # Data Sources and AI Methods
 
 ## Dataset
