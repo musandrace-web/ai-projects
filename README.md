@@ -1,5 +1,8 @@
-```markdown
 # AI Project: Email Spam Classifier
+
+## Summary
+This project implements a simple email spam classifier using supervised machine learning.  
+A Logistic Regression model is trained on a highly imbalanced dataset to highlight the limitations of accuracy as a performance metric and demonstrate the importance of precision, recall, and F1-score when detecting rare events such as spam.
 
 ## Introduction
 This project was developed as part of the **Building AI course**.  
@@ -55,4 +58,3 @@ Spam emails are a persistent problem in digital communication. Building a classi
 ## License
 This project is licensed under the **MIT License**.  
 You retain full copyright of your work.
-```
