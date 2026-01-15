@@ -1,60 +1,99 @@
-# AI Project: Email Spam Classifier
+
+# Project Title
+Email Spam Classifier  
+Final project for the Building AI course
 
 ## Summary
-This project implements a simple email spam classifier using supervised machine learning.  
-A Logistic Regression model is trained on a highly imbalanced dataset to highlight the limitations of accuracy as a performance metric and demonstrate the importance of precision, recall, and F1-score when detecting rare events such as spam.
+This project builds a simple machine learning model to classify emails as spam or not spam. It demonstrates preprocessing, supervised learning, and evaluation metrics while highlighting challenges in imbalanced datasets.
 
-## Introduction
-This project was developed as part of the **Building AI course**.  
-The aim is to design a simple machine learning model that can classify emails as either **spam** or **not spam**.  
-The project demonstrates fundamental concepts in **supervised learning**, **data preprocessing**, and **evaluation metrics**.
+## Background
+Spam emails are a common problem in digital communication, often cluttering inboxes and posing security risks. This project addresses these challenges by providing a model to automatically detect spam. Key motivations include:  
+•  How imbalanced datasets affect model performance  
+•  Why accuracy alone can be misleading  
+•  The importance of precision, recall, and F1-score  
 
-## Motivation
-Spam emails are a persistent problem in digital communication. Building a classifier helps illustrate:
+## How is it used?
+Users can feed the model a collection of emails, and it classifies each email as spam or legitimate. The solution is useful in:  
+•  Email clients or filtering systems  
+•  Organizations that want to reduce spam and phishing emails  
+•  Individuals who want to protect personal email accounts  
 
-- How imbalanced datasets affect model performance  
-- Why accuracy alone is misleading in skewed distributions  
-- The importance of precision, recall, and F1-score  
+The model is most effective on preprocessed text data and in environments where rare events (spam) need careful detection.  
+
+```python
+# Example code for predicting email spam
+from email_classifier import SpamClassifier
+
+model = SpamClassifier()
+prediction = model.predict("sample_email.txt")
+print(prediction)
+
+# Data Sources and AI Methods
 
 ## Dataset
-- **Size:** 1000 emails  
-- **Distribution:** 990 legitimate, 10 spam  
-- **Split:** Training and test sets maintain the same ratio of spam to legitimate emails  
+- **Size**: 1000 emails
+  - 990 legitimate
+  - 10 spam
 
-## Methodology
+## Data Split
+- Training and test sets maintain the same spam-to-legitimate ratio.
 
-### Preprocessing
-- Tokenization and bag-of-words representation  
-- Normalization of text features  
+## Preprocessing
+- Tokenization
+- Bag-of-words representation
+- Text normalization
 
-### Model
-- Logistic Regression classifier  
-- Baseline comparison against a majority-class classifier (always predicts legitimate)  
+## Model
+- **Primary**: Logistic Regression
+- **Baseline**: Majority-class classifier (always predicts legitimate)
 
-### Evaluation Metrics
-- Accuracy  
-- Precision  
-- Recall  
-- F1-score  
+## Evaluation Metrics
+- Accuracy
+- Precision
+- Recall
+- F1-score
 
-## Results
-- **Baseline accuracy:** 99% (majority-class classifier)  
-- **Logistic Regression:**
-  - Accuracy: 97%  
-  - Precision (spam): 0.80  
-  - Recall (spam): 0.70  
-  - F1-score: 0.75  
+---
 
-## Insights
-- Accuracy is misleading in imbalanced datasets  
-- Precision and recall provide a clearer picture of model usefulness  
-- Detecting rare events (spam) requires careful metric selection  
+# Results
 
-## Future Work
-- Explore advanced models (Naive Bayes, Random Forest, Neural Networks)  
-- Use larger and more balanced datasets  
-- Apply TF-IDF and word embeddings for richer feature representation  
+## Baseline (Majority-Class Classifier)
+- **Accuracy**: 99%
 
-## License
-This project is licensed under the **MIT License**.  
-You retain full copyright of your work.
+## Logistic Regression
+- **Accuracy**: 97%
+- **Precision (spam)**: 0.80
+- **Recall (spam)**: 0.70
+- **F1-score**: 0.75
+
+---
+
+# Insights
+- Accuracy can be misleading in imbalanced datasets.
+- Precision and recall provide a clearer picture of model usefulness.
+- Detecting rare events like spam requires careful metric selection.
+
+---
+
+# Challenges
+- Imbalanced dataset makes detecting spam harder.
+- The model may misclassify rare but important emails.
+- **Ethical consideration**: Blocking legitimate emails may affect users.
+
+---
+
+# What Next?
+- Explore more advanced models:
+  - Naive Bayes
+  - Random Forest
+  - Neural Networks
+- Use larger and more balanced datasets.
+- Apply TF-IDF and word embeddings for richer feature representation.
+- Potentially integrate into email clients for real-time spam detection.
+
+---
+
+# Acknowledgments
+- Inspiration and guidance from the *Building AI* course at University of Helsinki.
+- Dataset sources and open access materials.
+- Licensed under the MIT License. Full copyright retained by the author.
